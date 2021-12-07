@@ -16,7 +16,6 @@ khaiii는 "Kakao Hangul Analyzer III"의 첫 글자들만 모아 만든 이름�
 ----
 기계학습에 사용한 알고리즘은 신경망 알고리즘들 중에서 Convolutional Neural Network(CNN)을 사용하였습니다. 한국어에서 형태소분석은 자연어처리를 위한 가장 기본적인 전처리 과정이므로 속도가 매우 중요한 요소라고 생각합니다. 따라서 자연어처리에 많이 사용하는 Long-Short Term Memory(LSTM)와 같은 Recurrent Neural Network(RNN) 알고리즘은 속도 면에서 활용도가 떨어질 것으로 예상하여 고려 대상에서 제외하였습니다.
 
-CNN 모델에 대한 상세한 내용은 [CNN 모델](https://github.com/kakao/khaiii/wiki/CNN-%EB%AA%A8%EB%8D%B8) 문서를 참고하시기 바랍니다.
 
 
 성능
@@ -30,8 +29,7 @@ CNN 모델의 주요 하이퍼 파라미터는 분류하려는 음절의 좌/우
 
 win 파라미터의 경우 3 혹은 4에서 가장 좋은 성능을 보이며 그 이상에서는 오히려 성능이 떨어집니다. emb 파라미터의 경우 150까지는 성능도 같이 높아지다가 그 이상에서는 별 차이가 없습니다. 최 상위 5위 중 비교적 작은 모델은 win=3, emb=150으로 F-Score 값은 97.11입니다. 이 모델을 large 모델이라 명명합니다.
 
-#### v0.4
-[띄어쓰기 오류에 강건한 모델을 위한 실험](https://github.com/kakao/khaiii/wiki/%EB%9D%84%EC%96%B4%EC%93%B0%EA%B8%B0-%EC%98%A4%EB%A5%98%EC%97%90-%EA%B0%95%EA%B1%B4%ED%95%9C-%EB%AA%A8%EB%8D%B8%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%8B%A4%ED%97%98)을 통해 모델을 개선하였습니다. v0.4 모델은 띄어쓰기가 잘 되어있지 않은 입력에 대해 보다 좋은 성능을 보이는데 반해 세종 코퍼스에서는 다소 정확도가 떨어집니다. 이러한 점을 보완하기 위해 base 및 large 모델의 파라미터를 아래와 같이 조금 변경했습니다.
+있지 않은 입력에 대해 보다 좋은 성능을 보이는데 반해 세종 코퍼스에서는 다소 정확도가 떨어집니다. 이러한 점을 보완하기 위해 base 및 large 모델의 파라미터를 아래와 같이 조금 변경했습니다.
 
 * base 모델: win=4, emb=35, F-Score: 94.96
 * large 모델: win=4, emb=180, F-Score: 96.71
@@ -85,10 +83,6 @@ win 파라미터의 경우 3 혹은 4에서 가장 좋은 성능을 보이며 �
 ----
 khaiii의 빌드 및 설치에 관해서는 [빌드 및 설치 문서](https://github.com/kakao/khaiii/wiki/%EB%B9%8C%EB%93%9C-%EB%B0%8F-%EC%84%A4%EC%B9%98)를 참고하시기 바랍니다.
 
-
-Contributing
-----
-khaiii에 기여하실 분들은 [CONTRIBUTING](CONTRIBUTING.md) 및 [개발자를 위한 가이드](https://github.com/kakao/khaiii/wiki#%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-%EA%B0%80%EC%9D%B4%EB%93%9C) 문서를 참고하시기 바랍니다.
 
 
 Slack
